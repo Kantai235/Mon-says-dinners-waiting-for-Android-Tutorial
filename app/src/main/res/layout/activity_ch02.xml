@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ch02"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_light"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.kantai.androidexampledemo.Ch02Activity">
+
+    <EditText
+        android:id="@+id/Ch02_editText_Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Ch02_editText_Username"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/Ch02_editText_Username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/Ch02_editText_Age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Ch02_editText_PhoneNumber"
+        android:ems="10"
+        android:hint="Age"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/Ch02_editText_PhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Ch02_editText_Password"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:inputType="phone" />
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/Ch02_Button_Submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Ch02_editText_Age"
+        android:layout_marginBottom="10dp"
+        android:onClick="Ch02_Button_Click"
+        android:text="@android:string/ok"
+        app:bootstrapBrand="primary"
+        app:bootstrapSize="xl"
+        app:buttonMode="regular"
+        app:roundedCorners="true"
+        app:showOutline="false"
+        android:background="@android:color/holo_blue_light" />
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/Ch02_Button_Clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Ch02_Button_Submit"
+        android:layout_marginBottom="10dp"
+        android:onClick="Ch02_Button_Click"
+        android:text="@android:string/no"
+        app:bootstrapBrand="primary"
+        app:bootstrapSize="xl"
+        app:buttonMode="regular"
+        app:roundedCorners="true"
+        app:showOutline="false" />
+
+    <com.beardedhen.androidbootstrap.BootstrapWell
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/Ch02_Button_Clear"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        app:bootstrapSize="xs">
+
+        <TextView
+            android:id="@+id/Ch02_textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/Ch01_TextView_Title"
+            android:textSize="18sp"
+            android:textStyle="normal|bold"
+            android:gravity="top|left" />
+    </com.beardedhen.androidbootstrap.BootstrapWell>
+</RelativeLayout>

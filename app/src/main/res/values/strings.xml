@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">你媽叫你去吃飯</string>
+
+    <string name="Main_Button_Ch01_Title">Ch_01 Demo</string>
+    <string name="Main_Button_Ch02_Title">Ch_02 Demo</string>
+    <string name="Main_Button_Ch03_Title">Ch_03 Demo</string>
+    <string name="Main_Button_Ch04_Title">Ch_04 Demo</string>
+    <string name="Main_Button_Ch05_Title">Ch_05 Demo</string>
+    <string name="Main_Button_Ch06_Title">Ch_06 Demo</string>
+    <string name="Main_Button_Ch07_Title">Ch_07 Demo</string>
+    <string name="Main_Button_Ch08_Title">Ch_08 Demo</string>
+    <string name="Main_Button_Ch09_Title">Ch_09 Demo</string>
+    <string name="Main_Button_Ch10_Title">Ch_10 Demo</string>
+    <string name="Main_Button_Ch11_Title">Ch_11 Demo</string>
+    <string name="Main_Button_Ch12_Title">Ch_12 Demo</string>
+    <string name="Main_Button_Ch13_Title">Ch_13 Demo</string>
+    <string name="Main_Button_Ch14_Title">Ch_14 Demo</string>
+    <string name="Main_Button_Ch15_Title">Ch_15 Demo</string>
+    <string name="Main_Button_Ch16_Title">Ch_16 Demo</string>
+    <string name="Main_Button_Ch17_Title">Ch_17 Demo</string>
+    <string name="Main_Button_Ch18_Title">Ch_18 Demo</string>
+    <string name="Main_Button_Ch19_Title">Ch_19 Demo</string>
+    <string name="Main_Button_Ch20_Title">Ch_20 Demo</string>
+
+    <string name="Ch01_TextView_Title">Hello, World!</string>
+</resources>

@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/bootstrap_brand_info</item>
+        <item name="colorPrimaryDark">@color/bootstrap_brand_primary</item>
+        <item name="colorAccent">@color/bootstrap_brand_danger</item>
+
+        <item name="android:windowExitTransition">@transition/explode</item>
+        <item name="android:windowEnterAnimation">@transition/explode</item>
+        <item name="android:windowReenterTransition">@transition/explode</item>
+    </style>
+
+</resources>
