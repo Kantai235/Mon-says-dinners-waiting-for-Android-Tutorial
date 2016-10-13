@@ -80,7 +80,7 @@ finish();
 基本上，這是沒有程式的一個範例，就只是元件拉一拉而已，所以只要參考 xml 的配置即可。
 
 # Ch02Activity 
-![Ch02Activity EditText、ButtonClick](/images/mom-ch02.png "Ch02Activity TextView、ImageView")
+![Ch02Activity EditText、ButtonClick](/images/mom-ch02.png "Ch02Activity EditText、ButtonClick")
 ###### (1)按下Submit按鈕會在下方文字方塊顯示輸入結果
 ###### (2)按下Clear按鈕會清除所有文字
 
@@ -126,7 +126,7 @@ editText_Age.setText("");
 這樣就把 Ch02 章節給搞定了！
 
 # Ch03Activity 
-![Ch03Activity Layout、ImageView](/images/mom-ch03.png "Ch03Activity TextView、ImageView")
+![Ch03Activity Layout、ImageView](/images/mom-ch03.png "Ch03Activity Layout、ImageView")
 ###### (1)建立 LinearLayout，並在其內建立 1 個 FrameLayout、1 個 LinearLayout 與 1 個 Button
 ###### (2)點擊圖片會讓圖片消失
 ###### (3)按下 RESET 按鈕回復照片
@@ -160,3 +160,175 @@ public void Ch03_Button_Click(View view) {
 }
 ```
 
+# Ch04Activity 
+![Ch04Activity style.xml、Theme](/images/mom-ch04.png "Ch04Activity style.xml、Theme")
+###### (1)套用style檔案
+###### (2)設定應用程式的theme
+
+也是沒有程式的範例，不做說明。
+
+# Ch05Activity 
+![Ch05Activity Touch](/images/mom-ch05.png "Ch05Activity Touch")
+###### (1)使用者觸擊螢幕後會顯示觸擊狀態、觸擊點總數與觸擊點的座標
+
+首先我們會需要一個 TextView 來顯示訊息，接下來就是程式的事情了，我們可以透過 onTouchEvent 來擷取觸碰事件：
+
+```Java
+@Override
+public boolean onTouchEvent(MotionEvent event) {
+    // Code ...
+}
+```
+
+接下來就是偵測各種事件，並且將資訊 Show 到 TextView 上：
+
+```Java
+this.touchX = event.getX();       // 觸控的 X 軸位置
+this.touchY = event.getY() - 50;  // 觸控的 Y 軸位置
+
+// 判斷觸控動作
+switch (event.getAction()) {
+    // 按下
+    case MotionEvent.ACTION_DOWN:
+        this.textView.setText(
+                "偵測到點擊動作(ACTION_DOWN)\n" +
+                "X Point : " + touchX + "\n" +
+                "Y Point : " + touchY + "\n"
+        );
+        break;
+
+    // 拖曳移動
+    case MotionEvent.ACTION_MOVE:
+        textView.setText(
+                "偵測到拖曳移動動作(ACTION_MOVE)\n" +
+                "X Point : " + touchX + "\n" +
+                "Y Point : " + touchY + "\n"
+        );
+        break;
+
+    // 放開
+    case MotionEvent.ACTION_UP:
+        textView.setText(
+                "偵測到放開動作(ACTION_UP)\n" +
+                "X Point : " + touchX + "\n" +
+                "Y Point : " + touchY + "\n"
+        );
+        break;
+}
+
+// TODO Auto-generated method stub
+return super.onTouchEvent(event);
+```
+
+# Ch06Activity 
+![Ch06Activity Touch](/images/mom-ch06.png "Ch06Activity Touch")
+###### (1)使用者的手勢會與手勢資料庫內的手勢比對，如果符合會顯示該手勢名稱與正確程度（會以分數表示）
+###### (2)左滑或右滑手勢會改變內框的背景色；打勾或畫圈會改變外框的背景色
+
+```Java
+/**
+ * 注意：這邊需要創建「手勢資料庫」
+ * 請參考 https://goo.gl/DZh7Af
+ * Page. 4-31 ~ 4-32
+ */
+```
+
+首先我們要先想到，因為觸發事件會改變顏色，所以我們必須有個地方儲存要改變的顏色：
+
+```Java
+private List<Integer> colorList;
+```
+
+然後寫個方法來載入顏色：
+
+```Java
+private void initColorList() {
+    this.colorList = new ArrayList<>();
+    this.colorList.add(R.color.bootstrap_brand_danger);
+    this.colorList.add(R.color.bootstrap_brand_info);
+    this.colorList.add(R.color.bootstrap_brand_primary);
+    this.colorList.add(R.color.bootstrap_brand_secondary_border);
+    this.colorList.add(R.color.bootstrap_brand_secondary_text);
+    this.colorList.add(R.color.bootstrap_brand_success);
+    this.colorList.add(R.color.bootstrap_brand_warning);
+}
+```
+
+再來 Activity 執行的時候，我們要讓顏色被載入，所以要在 onCreate 當中新增：
+
+```Java
+this.initColorList();
+```
+
+再來為了讓顏色可以前後轉換，所以我們再寫兩個方法：
+
+```Java
+private int indexPlus(int index) {
+    if (index >= this.colorList.size()) {
+        index = 0;
+        return index;
+    } else {
+        index++;
+        return index;
+    }
+}
+
+private int indexBack(int index) {
+    if (index == 0) {
+        return this.colorList.size();
+    } else {
+        index--;
+        return index;
+    }
+}
+```
+
+再來就是手勢庫的問題：
+
+```Java
+@Override
+public void onGesturePerformed(GestureOverlayView overlay, Gesture gesture) {
+    ArrayList predictions = this.gestureLibrary.recognize(gesture);
+    if (predictions.size() > 0) {
+        Prediction prediction = (Prediction) predictions.get(0);
+        if (prediction.score > 1.0) {
+            this.textView.setText(
+                    "Activity Name : " + prediction.name + "\n" +
+                            "Score : " + prediction.score + "\n"
+            );
+            switch (prediction.name) {
+                case "LeftToRight":
+                    this.X_colorIndex = this.indexPlus(this.X_colorIndex);
+                    this.gestureOverlayView.setBackgroundColor(colorList.get(0));
+                    break;
+
+                case "RightToLeft":
+                    this.X_colorIndex = this.indexBack(this.X_colorIndex);
+                    this.gestureOverlayView.setBackgroundColor(colorList.get(this.X_colorIndex));
+                    break;
+
+                case "TopToBottom":
+
+                    break;
+
+                case "BottomToTop":
+
+                    break;
+            }
+        }
+    }
+}
+```
+
+最後再 onCreate 當中，匯入我們已經創建好的手勢庫：
+
+```Java
+this.gestureOverlayView = (GestureOverlayView) findViewById(R.id.Ch06_gestureOverlayView);
+this.gestureOverlayView.addOnGesturePerformedListener(this);
+this.gestureLibrary = GestureLibraries.fromRawResource(this, R.raw.gestures);
+
+if (!this.gestureLibrary.load())
+    Toast.makeText(Ch06Activity.this, "Gestures load is NOT!", Toast.LENGTH_LONG).show();
+else
+    Toast.makeText(Ch06Activity.this, "Gestures load is OK!", Toast.LENGTH_LONG).show();
+```
