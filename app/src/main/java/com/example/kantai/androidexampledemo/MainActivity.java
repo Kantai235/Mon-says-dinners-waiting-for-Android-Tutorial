@@ -43,6 +43,27 @@ public class MainActivity extends AppCompatActivity {
             case R.id.Main_Button_for_Ch06:
                 intent.setClass(MainActivity.this, Ch06Activity.class);
                 break;
+            case R.id.Main_Button_for_Ch07:
+                intent.setClass(MainActivity.this, Ch07Activity.class);
+                break;
+            case R.id.Main_Button_for_Ch08:
+                intent.setClass(MainActivity.this, Ch08Activity.class);
+                break;
+            case R.id.Main_Button_for_Ch09:
+                intent.setClass(MainActivity.this, Ch09Activity.class);
+                break;
+            case R.id.Main_Button_for_Ch10:
+                intent.setClass(MainActivity.this, Ch10Activity.class);
+                break;
+            case R.id.Main_Button_for_Ch11:
+                intent.setClass(MainActivity.this, Ch11Activity.class);
+                break;
+            case R.id.Main_Button_for_Ch12:
+                intent.setClass(MainActivity.this, Ch12Activity.class);
+                break;
+            case R.id.Main_Button_for_Ch13:
+                intent.setClass(MainActivity.this, Ch13Activity.class);
+                break;
             default:
                 intent.setClass(MainActivity.this, MainActivity.class);
                 break;

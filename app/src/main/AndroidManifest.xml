@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kantai.androidexampledemo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,7 +22,14 @@
         <activity android:name=".Ch03Activity" />
         <activity android:name=".Ch04Activity" />
         <activity android:name=".Ch05Activity" />
-        <activity android:name=".Ch06Activity"></activity>
+        <activity android:name=".Ch06Activity" />
+        <activity android:name=".Ch07Activity" />
+        <activity android:name=".Ch08Activity" />
+        <activity android:name=".Ch09Activity" />
+        <activity android:name=".Ch10Activity" />
+        <activity android:name=".Ch12Activity" />
+        <activity android:name=".Ch13Activity" />
+        <activity android:name=".Ch11Activity"></activity>
     </application>
 
 </manifest>

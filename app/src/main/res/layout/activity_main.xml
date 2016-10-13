@@ -106,5 +106,110 @@
             app:roundedCorners="true"
             app:showOutline="false" />
 
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/Main_Button_for_Ch07"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Main_Button_for_Ch06"
+            android:layout_marginBottom="10dp"
+            android:onClick="Main_Button_Click"
+            android:text="@string/Main_Button_Ch07_Title"
+            app:bootstrapBrand="primary"
+            app:bootstrapSize="xl"
+            app:buttonMode="regular"
+            app:roundedCorners="true"
+            app:showOutline="false" />
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/Main_Button_for_Ch08"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Main_Button_for_Ch07"
+            android:layout_marginBottom="10dp"
+            android:onClick="Main_Button_Click"
+            android:text="@string/Main_Button_Ch08_Title"
+            app:bootstrapBrand="primary"
+            app:bootstrapSize="xl"
+            app:buttonMode="regular"
+            app:roundedCorners="true"
+            app:showOutline="false" />
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/Main_Button_for_Ch09"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Main_Button_for_Ch08"
+            android:layout_marginBottom="10dp"
+            android:onClick="Main_Button_Click"
+            android:text="@string/Main_Button_Ch09_Title"
+            app:bootstrapBrand="primary"
+            app:bootstrapSize="xl"
+            app:buttonMode="regular"
+            app:roundedCorners="true"
+            app:showOutline="false" />
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/Main_Button_for_Ch10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Main_Button_for_Ch09"
+            android:layout_marginBottom="10dp"
+            android:onClick="Main_Button_Click"
+            android:text="@string/Main_Button_Ch10_Title"
+            app:bootstrapBrand="primary"
+            app:bootstrapSize="xl"
+            app:buttonMode="regular"
+            app:roundedCorners="true"
+            app:showOutline="false" />
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/Main_Button_for_Ch11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Main_Button_for_Ch10"
+            android:layout_marginBottom="10dp"
+            android:onClick="Main_Button_Click"
+            android:text="@string/Main_Button_Ch11_Title"
+            app:bootstrapBrand="primary"
+            app:bootstrapSize="xl"
+            app:buttonMode="regular"
+            app:roundedCorners="true"
+            app:showOutline="false" />
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/Main_Button_for_Ch12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Main_Button_for_Ch11"
+            android:layout_marginBottom="10dp"
+            android:onClick="Main_Button_Click"
+            android:text="@string/Main_Button_Ch12_Title"
+            app:bootstrapBrand="primary"
+            app:bootstrapSize="xl"
+            app:buttonMode="regular"
+            app:roundedCorners="true"
+            app:showOutline="false" />
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/Main_Button_for_Ch13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Main_Button_for_Ch12"
+            android:layout_marginBottom="10dp"
+            android:onClick="Main_Button_Click"
+            android:text="@string/Main_Button_Ch13_Title"
+            app:bootstrapBrand="primary"
+            app:bootstrapSize="xl"
+            app:buttonMode="regular"
+            app:roundedCorners="true"
+            app:showOutline="false" />
+
     </RelativeLayout>
 </ScrollView>
